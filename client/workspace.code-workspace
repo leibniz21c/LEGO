@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "WebTeamProject",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "WebTeamProject"
+	}
+}
