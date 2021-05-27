@@ -1,4 +1,4 @@
-![logo](./pic/logo.png)
+![logo](./pic/logo.png)<br>
 Welcome to __LEGO__  git repository!<br>
 Here are some useful information about LEGO service.
 
