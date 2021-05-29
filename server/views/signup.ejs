@@ -11,57 +11,82 @@
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="#">
+
+
+
+      <form action="/signup" method="POST" enctype="application/json">
         <div class="user-details">
-          <div class="input-box">
-            <span class="details">ID</span>
-            <input type="text" placeholder="Enter your name" required>
-          </div>
+
           <div class="input-box">
             <span class="details">e-mail</span>
-            <input type="text" placeholder="Enter your username" required>
+            <input 
+              type="text" 
+              placeholder="Enter your email" 
+              id="email"
+              name="email"
+              required>
           </div>
-          <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your email" required>
-          </div>
+
           <div class="input-box">
             <span class="details">Age</span>
-            <input type="text" placeholder="Enter your number" required>
+            <input 
+              type="text" 
+              placeholder="Enter your age" 
+              id="age"
+              name="age"
+              required>
           </div>
+
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
+            <input 
+              type="text" 
+              placeholder="Enter your password" 
+              id="password"
+              name="password"
+              required>
           </div>
+
           <div class="input-box">
             <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirm your password" required>
+            <input 
+              type="text" 
+              placeholder="Confirm your password" 
+              id="confirm_password"
+              name="confirm_password"
+              required>
           </div>
+
         </div>
+
+        <!-- Radio button to select gender -->
         <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
+          <input type="radio" name="sex" id="dot-1" value="m">
+          <input type="radio" name="sex" id="dot-2" value="f">
+
           <span class="gender-title">Gender</span>
           <div class="category">
             <label for="dot-1">
             <span class="dot one"></span>
             <span class="gender">Male</span>
           </label>
+
           <label for="dot-2">
             <span class="dot two"></span>
             <span class="gender">Female</span>
           </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Prefer not to say</span>
-            </label>
           </div>
         </div>
+
+
         <div class="button">
           <input type="submit" value="Register">
         </div>
+
       </form>
+
+
+
     </div>
   </div>
 
