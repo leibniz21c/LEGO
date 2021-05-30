@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
+
 	</head>
 	<body class="is-preload">
 
@@ -21,21 +22,21 @@
 				</p>
 			</header>
 
-		<!-- Signup Form -->
-			<form class="signup-form">
-				<input type="id" name="id" id="id" placeholder="Your ID" />
-				<br>
-				<br>
-			</form>
 
-			<form class="signup-form">
-				<input type="password" name="password" id="password" placeholder="PASSWORD" />
-			</form>
-			
-			<form class="signup-form">
-				<input type="button" value="Sign Up" onClick="location.href='/signup'"/>
-				<input type="button" value="Sign In" onClick="location.href='/games'"/>
-			</form>
+
+		<!-- Modified 20210531 -->
+		<!-- Processing with JQuery -->
+		<!-- Signin Form -->
+		<form class="signin-form" action="/signin" method="POST" enctype="application/json">
+			<input type="id" name="email" id="email" placeholder="Your Email" />
+			<input type="password" name="password" id="password" placeholder="PASSWORD" />
+			<input type="button" value="Sign Up" onClick="location.href='/signup'"/>
+			<input type="submit" value="Sign In" />
+			<br>
+			<br>
+		</form>
+		</form>
+		
 			
 		<!-- Footer -->
 			<footer id="footer">
@@ -50,7 +51,5 @@
 				</ul>
 			</footer>
 
-		<!-- Scripts -->
-			<script src="/js/main.js"></script>
 	</body>
 </html>
