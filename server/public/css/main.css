@@ -799,33 +799,35 @@ button,
     margin: 0 0 1em 0; } }
 
 /* Signup Form */
-.signup-form {
+/* Modified 20210530 */
+/* signup-form to signin-form */
+.signin-form {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
   position: relative; }
-  .signup-form input[type="text"],
-  .signup-form input[type="password"],
-  .signup-form input[type="id"] {
+  .signin-form input[type="text"],
+  .signin-form input[type="password"],
+  .signin-form input[type="id"] {
     width: 18em; }
-  .signup-form > * {
+  .signin-form > * {
     margin: 0 0 0 1em; }
-  .signup-form > :first-child {
+  .signin-form > :first-child {
     margin: 0 0 0 0; }
   @media screen and (max-width: 480px) {
-    .signup-form {
+    .signin-form {
       -moz-flex-direction: column;
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column; }
-      .signup-form input[type="type"],
-      .signup-form input[type="password"],
-      .signup-form input[type="id"] {
+      .signin-form input[type="type"],
+      .signin-form input[type="password"],
+      .signin-form input[type="id"] {
         width: 100%; }
-      .signup-form > * {
+      .signin-form > * {
         margin: 1.25em 0 0 0; }
-      .signup-form .message {
+      .signin-form .message {
         bottom: -1.5em;
         font-size: 0.9em;
         height: 1em;
