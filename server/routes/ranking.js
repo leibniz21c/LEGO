@@ -1,3 +1,8 @@
 module.exports = async (req, res) => {
-    res.render('ranking');
+    if (req.session.email) {
+        res.render('ranking');
+    } else {
+        res.redirect('/')
+    }
+    
 }

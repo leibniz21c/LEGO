@@ -1,3 +1,7 @@
 module.exports = async (req, res) => {
-    res.render('community');
+    if (req.session.email) {
+        res.render('community');
+    } else {
+        res.redirect('/')
+    }
 }

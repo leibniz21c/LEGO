@@ -1,3 +1,8 @@
-module.exports = async (req, res) => {
-    res.render('games');
+module.exports = (req, res) => {
+    if (req.session.email) {
+        console.log("[DEBUG] : " + req.session)
+        res.render('games');
+    } else {
+        res.redirect('/')
+    }
 }
