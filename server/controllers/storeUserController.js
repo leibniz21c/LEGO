@@ -1,7 +1,7 @@
 const models = require("../models")
 const bcrypt = require('bcrypt')
 
-module.exports = (req, res, next) => {
+module.exports = (req, res) => {
     bcrypt.hash(req.body.password, 10, (error, hash) => {
         models.User.create({
             email: req.body.email,
@@ -14,6 +14,7 @@ module.exports = (req, res, next) => {
                 return res.redirect('/signup')
             }
         })
-        next()
+        
+        res.redirect('/')
     })
 }
