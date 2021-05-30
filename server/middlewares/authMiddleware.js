@@ -1,7 +1,7 @@
 const models = require("../models")
 
 module.exports = async (req, res, next) => {
-    var user = await models.User.findAll({
+    var user = await models.User.findOne({
         where: {
             email: req.body.email
         }
@@ -10,14 +10,18 @@ module.exports = async (req, res, next) => {
     console.log('email : ' + req.body.email)
 
     // Email already exist.
-    if (user.length) {
+    if (user) {
         console.log('[DEBUG] : Email already exist.')
+
+        // Must change
         return res.redirect('/')
     }
 
     // Password confirming
     if (req.password !== req.confirm_password) {
         console.log('[DEBUG] : Password doesn\'t confirm.')
+
+        // Must change
         return res.redirect('/')
     }
 
