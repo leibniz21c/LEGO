@@ -21,7 +21,7 @@ const homeRouter = require('./routes/home')
 const signupRouter = require('./routes/signup')
 const gamesRouter = require('./routes/games')
 const rankingRouter = require('./routes/ranking')
-const communityRouter = require('./routes/community')
+const boardRouter = require('./routes/board')
 const developerRouter = require('./routes/developer')
 
 // Controllers
@@ -38,8 +38,8 @@ app.get('/', homeRouter)
 app.get('/signup', signupRouter)
 app.get('/games', gamesRouter)
 app.get('/ranking', rankingRouter)
-app.get('/community', communityRouter)
 app.get('/developer', developerRouter)
+app.get('/board', boardRouter)
 
 app.post('/signin', redirectIfAuthenticatedMiddleware, signinContoller)
 app.post('/signup', authMiddleware, storeUserController)

@@ -19,24 +19,27 @@ create table GameLog(
     score int
 );
 create table Board(
-    boardId int primary key,
-    datetime DATETIME,
+    boardId int NOT NULL AUTO_INCREMENT,
     email varchar(255),
-    gameId int,
     title varchar(255),
     body LONGTEXT,
-    viewCount int
+    regdate datetime NOT NULL,
+    modidate datetime NOT NULL,
+    passwd varchar(255) NOT NULL,
+    viewCount int,
+    PRIMARY KEY (boardId)
 );
 
 create table Comment(
-    commentId int primary key ,
+    commentId int NOT NULL AUTO_INCREMENT,
     email varchar(255),
+    body LONGTEXT,
     boardId int,
-    datetime DATETIME,
-    body LONGTEXT
+    regdate DATETIME,
+    PRIMARY KEY (commentId)
 );
 
-show tables ;
+show tables;
 
 # GameLog fk 설정
 alter table GameLog
@@ -60,8 +63,3 @@ references Board(boardId);
 alter table Board
 add constraint fk_Board_email foreign key (email)
 references Users(email);
-
-alter table Board
-add constraint fk_Board_gameId foreign key (gameId)
-references Game(gameId);
-
