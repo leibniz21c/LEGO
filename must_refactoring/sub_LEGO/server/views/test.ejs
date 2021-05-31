@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body onkeypress="keypress()">
+ 
+    <div> 
+        <iframe src="https://games.gdevelop-app.com/game-88de5c1e-e531-4f06-a451-048750677251/index.html" name="a"></iframe>
+    </div>
+    <div> 
+        <iframe src="https://games.gdevelop-app.com/game-88de5c1e-e531-4f06-a451-048750677251/index.html" name="a"></iframe>
+    </div>
+   
+ 
+    <script>
+        // 키보드 이벤트 종류: keypress(). keydown(0), keyup()
+        // keypress()는 방향키를 인식하지 못함 , 대신 대소문자 구별
+        // keydown(), keyup()은 방향키 인식함, 대소문자 구별하지 못함.
+        function keypress(){
+            //원래부터 존재하는 내장 객체
+            var keycode=event.keyCode;
+ 
+            document.getElementById('keychar').value=String.fromCharCode(keycode);
+            document.getElementById('keycode').value=keycode;
+            document.getElementById('shiftkey').checked=event.shiftKey;
+        }
+    </script>
+ 
+    <hr>
+    <!-- 참고.!! 별외 -->
+    <!-- html요소에 속성을 이벤트처리를 하기 위해 함수를 전달하는 것과 -->
+    <!-- addEventListener로 이벤트를 처리할 때 콜백함수를 지정하는 것이 차이가 있음 : this키워드의 차이!!-->
+    <input type="text" onkeyup="aaa()">
+    <script>
+        var aaa= function(){//키보드를 눌렀다가 뛸때 발동함 
+            alert(this); //this는 이벤트 발생 요소가 아니라 window내장객체임!!
+        }
+    </script>
+ 
+    <hr>
+    <input type="text" id="in1">
+    <script>
+        var kkk= function(){
+            //alert(this); //this는 이벤트 발생 요소를 지칭함!!
+            this.value= this.value.toUpperCase();
+        }
+        document.getElementById('in1').addEventListener('keyup',kkk);
+    </script>
+ 
+    
+</body>
+</html>
