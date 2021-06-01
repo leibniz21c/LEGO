@@ -1,6 +1,7 @@
 module.exports = (req, res) => {
     if (req.session.email) {
-        res.render('games');
+        res.render('write');
+        
     } else {
         res.redirect('/')
     }
