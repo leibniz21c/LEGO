@@ -18,22 +18,21 @@ create table GameLog(
     gameId int,
     score int
 );
-create table Board(
+create table Boards(
     boardId int NOT NULL AUTO_INCREMENT,
     email varchar(255),
     title varchar(255),
-    body LONGTEXT,
+    body TEXT,
     regdate datetime NOT NULL,
     modidate datetime NOT NULL,
-    passwd varchar(255) NOT NULL,
     viewCount int,
     PRIMARY KEY (boardId)
 );
 
-create table Comment(
+create table Comments(
     commentId int NOT NULL AUTO_INCREMENT,
     email varchar(255),
-    body LONGTEXT,
+    body TEXT,
     boardId int,
     regdate DATETIME,
     PRIMARY KEY (commentId)
@@ -51,15 +50,15 @@ add constraint fk_GameLog_email foreign key (email)
 references Users(email);
 
 # Comment fk 설정
-alter table Comment
+alter table Comments
 add constraint fk_Comment_email foreign key (email)
 references Users(email);
 
-alter table Comment
+alter table Comments
 add constraint fk_Comment_boardId foreign key (boardId)
-references Board(boardId);
+references Boards(boardId);
 
 # Board fk 설정
-alter table Board
+alter table Boards
 add constraint fk_Board_email foreign key (email)
 references Users(email);
