@@ -1,18 +1,14 @@
-const models = require("../models")
+const Users = require("../models").Users
 
 module.exports = async (req, res, next) => {
-    var user = await models.User.findOne({
+    var user = await User.findOne({
         where: {
             email: req.body.email
         }
     })
 
-    console.log('email : ' + req.body.email)
-
     // Email already exist.
     if (user) {
-        console.log('[DEBUG] : Email already exist.')
-
         // Must change
         return res.redirect('/')
     }
@@ -24,15 +20,5 @@ module.exports = async (req, res, next) => {
         // Must change
         return res.redirect('/')
     }
-
     next()
 }
-
-// module.exports = (req, res, next) => {    
-//     User.findById(req.session.userId, (error, user ) =>{
-//       if(error || !user ) 
-//         return res.redirect('/')
-      
-//       next()
-//     })
-// }
