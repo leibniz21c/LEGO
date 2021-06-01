@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/communityPage.css">
     <title>LEGO</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
@@ -110,49 +107,43 @@ input[type="checkbox"]{
 </style>
 </head>
 <body>
-  <nav>
-      <div class="logo">
+    <nav>
+    <div class="logo">
         LEGO
-      </div>
-      <label for="click" class="menu-btn">
-      <i class="fas fa-bars"></i>
-      </label>
-      <ul>
-          <li><a href="/games">Games</a></li>
-          <li><a href="/ranking">Ranking</a></li>
-          <li><a class="active" href="/board">Community</a></li>
-          <li><a href="/developer">Developer</a></li>
-          <li><a href="/others">Others</a></li>
+     </div>
+     <label for="click" class="menu-btn">
+     <i class="fas fa-bars"></i>
+     </label>
+     <ul>
+         <li><a href="/games">Games</a></li>
+         <li><a href="/ranking">Ranking</a></li>
+         <li><a class="active" href="/board">Community</a></li>
+         <li><a href="/developer">Developer</a></li>
+         <li><a href="/others">Others</a></li>
       </ul>
-  </nav>
+  </nav> 
 
- <h1>Community</h1>
- <a href="/board/write">글쓰기</a>
- <table border="1">
-     <tr>
-         <td>번호</td>
-         <td>작성자</td>
-         <td>제목</td>
-         <td>조회수</td>
-         <td>수정일</td>
-         <td>등록일</td>
-     </tr>
-     <%
-     for (var i = 0; i < boards.length; i++) {
-     %>
-     <tr>
-         <td><%= boards[i].boardId %></td>
-         <td><%= boards[i].email %></td>
-         <td><a href="/board/read/<%= boards[i].boardId %>"><%= boards[i].title %></a></td>
-         <td><%= boards[i].viewCount %></td>
-         <td><%= boards[i].modidate %></td>
-         <td><%= boards[i].regdate %></td>
-     </tr>
-     <%}%>
- </table>
-     
- </div>
+<form action="/board/update/done" method="POST" enctype="application/json">
+    <table border="1">
+        <input type="hidden" name="boardId" value="<%= board.boardId %>"/>
+        <tr>
+            <td>작성자</td>
+            <td><%= board.email %></td>
+        </tr>
+        <tr>
+            <td>제목</td>
+            <td><input type="text" name="title" id="title" value="<%= board.title %>" required/></td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td><textarea name="body" id="body" cols="30" rows="10" required><%= board.body %></textarea></td>
+        </tr>
+    </table>
+
+    <button type="submit">글 수정</button>
+</form>
+
+<a href="/board">목록</a>
 
 </body>
-<footer></footer>
 </html>

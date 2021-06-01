@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/myPage.css">
-    <link rel="stylesheet" href="/assets/css/gamePage.css">
+    <link rel="stylesheet" href="/css/myPage.css">
+    <link rel="stylesheet" href="/css/gamePage.css">
     <title>Document</title>
 </head>
 <body>
@@ -18,28 +18,30 @@
     <i class="fas fa-bars"></i>
     </label>
     <ul>
-       <li><a href="gameTab.html">Games</a></li>
-       <li><a href="rankingTab.html">Ranking</a></li>
-       <li><a href="communityTab.html">Community</a></li>
-       <li><a href="developTab.html">Develop</a></li>
-       <li><a class="active" href="myPageTab.ejs">MyPage</a></li>
+       <li><a href="/games">Games</a></li>
+       <li><a href="/ranking">Ranking</a></li>
+       <li><a href="/board">Community</a></li>
+       <li><a href="/developer">Develop</a></li>
+       <li><a class="active" href="/mypage">MyPage</a></li>
     </ul>
  </nav>
+ <form method="POST" action="/mypage/detail" enctype="application/json">
     <div class="member_checkpassword">
         <div class="confirm">
             <fieldset>
                 <legend><b>비밀번호 확인</b></legend>
                 <p class="info">
-                    <strong>{$member_id}</strong>님의 <br>회원정보를 안전하게 보호하기 위해<br>비밀번호를 한번 더 확인해 주세요.
+                    <strong><%= user.email %></strong>님의 <br>회원정보를 안전하게 보호하기 위해<br>비밀번호를 한번 더 확인해 주세요.
                 </p>
                 <p class="password">
-                    <label for="cp_password">비밀번호</label><input type="password" placeholder="비밀번호 입력">
+                    <label for="cp_password">비밀번호</label><input type="password" placeholder="비밀번호 입력" name="password">
                 </p>
                 <br>
-                <a style = "margin-left: 33%; display: inline-block;" href="/mypageDetail.ejs" onclick=""><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/btn_submit.gif" alt="확인" /></a>
+                <button type="submit">확인</button>
             </p>
             </fieldset>
         </div>
     </div>
+ </form>
 </body>
 </html>
