@@ -2,7 +2,6 @@
 
 const path = require('path');
 const Sequelize = require('sequelize');
-const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '\\..\\config\\config.json')[env];
 
@@ -17,7 +16,8 @@ db.Sequelize = Sequelize;
 
 
 // Connection with models
-db.User = require('./User') (sequelize, Sequelize)
-
+db.Users = require('./User') (sequelize, Sequelize)
+db.Boards = require('./Boards') (sequelize, Sequelize)
+db.Comments = require('./Comments') (sequelize, Sequelize)
 
 module.exports = db;
