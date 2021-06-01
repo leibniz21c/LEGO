@@ -2,24 +2,26 @@ const Users = require("../models").Users
 const bcrypt = require('bcrypt')
 
 module.exports = async (req, res) => {
-    const {email, password} = req.body
+    const password = req.body.passoword
     
     const user = await Users.findOne({
         where : {
-            email:email
+            email:req.session.email
         }
     })
 
     if (user) {
         bcrypt.compare(password, user.dataValues.password, (error, same) => {
             if (same) {
-                req.session.email = user.dataValues.email
-                res.redirect('/games')
+                req.session.mypageMode = true
+                res.render('mypage_detail')
             } else {
-                res.redirect('/')
+                // Incorrect
+                res.redirect('/mypage')
             }
         })
     } else {
+        // Go home
         res.redirect('/')
     }
 }
