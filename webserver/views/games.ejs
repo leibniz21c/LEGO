@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>LEGO</title>
+      <link rel="stylesheet" href="/css/gamePage.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <nav>
+         <div class="logo">
+            LEGO
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a class="active" href="/games">Games</a></li>
+            <li><a href="/ranking">Ranking</a></li>
+            <li><a href="/board">Community</a></li>
+            <li><a href="/developer">Developer</a></li>
+            <li><a href="/mypage">My Page</a></li>
+         </ul>
+      </nav>
+  <div class="bottom">
+      <table>
+         <%
+         for (var i = 0; i < games.length; i++) {
+         %>
+         <tr>
+            <form name="selectGame<%= games[i].gameId %>" action="/games" method="POST" enctype="application/json">
+               <input type="hidden" name="gameId" value="<%= games[i].gameId %>" />
+            </form>
+               
+            <td style="background-image: url('<%= games[i].image %>'); background-size: cover;" onclick="javascript:document.selectGame<%= games[i].gameId %>.submit();">
+                  <%= games[i].gameName %>
+            </td>
+         </tr>
+         <%}%>
+
+      </table>
+  </div>
+   </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>LEGO</title>
+      <link rel="stylesheet" href="/css/gamePage.css">
+      <link rel="stylesheet" href="/css/rankingPage.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <nav>
+         <div class="logo">
+            LEGO
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+          <li><a href="/games">Games</a></li>
+          <li><a class="active" href="/ranking">Ranking</a></li>
+          <li><a href="/board">Community</a></li>
+          <li><a href="/developer">Developer</a></li>
+          <li><a href="/others">Others</a></li>
+        </ul>
+      </nav>
+  <div class="bottom">
+    <div class="container">
+        <header>
+          <div class="NameTab">
+            
+            <h1 onclick="location.href='/ranking'"></h1>
+
+            <h1>Ranking</h1>
+          </div>
+        </header>
+        <div class="bottom">
+          <table>
+             <%
+             for (var i = 0; i < games.length; i++) {
+             %>
+             <tr>
+              <td><a href="/ranking/rankingPage/<%= games[i].gameId %>"><%= games[i].gameName %></a></td>
+             </tr>
+             <%}%>
+    
+          </table>
+    </div>
+  </div>
+   </body>
+</html>
