@@ -7,6 +7,187 @@
       <link rel="stylesheet" href="/css/rankingPage.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+         @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+         /* table */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+}
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 30px 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+ body {
+	 background: #dce1df;
+	 color: #4f585e;
+	 font-family: 'Source Sans Pro', sans-serif;
+	 text-rendering: optimizeLegibility;
+}
+ a.btn {
+	 background: #0096a0;
+	 border-radius: 4px;
+	 box-shadow: 0 2px 0px 0 rgba(0,0,0,0.25);
+	 color: #ffffff;
+	 display: inline-block;
+	 padding: 6px 30px 8px;
+	 position: relative;
+	 text-decoration: none;
+	 transition: all 0.1s 0s ease-out;
+}
+ .no-touch a.btn:hover {
+	 background: #00a2ad;
+	 box-shadow: 0px 8px 2px 0 rgba(0,0,0,0.075);
+	 transform: translateY(-2px);
+	 transition: all 0.25s 0s ease-out;
+}
+ .no-touch a.btn:active, a.btn:active {
+	 background: #008a93;
+	 box-shadow: 0 1px 0px 0 rgba(255,255,255,0.25);
+	 transform: translate3d(0,1px,0);
+	 transition: all 0.025s 0s ease-out;
+}
+ div.cards {
+	 margin: 80px auto;
+	 max-width: 960px;
+	 text-align: center;
+}
+ div.card {
+	 background: rgb(0,0,0);
+	 display: inline-block;
+	 margin: 8px;
+	 max-width: 300px;
+	 perspective: 1000;
+	 position: relative;
+	 text-align: left;
+	 transition: all 0.3s 0s ease-in;
+	 width: 300px;
+	 z-index: 1;
+}
+ div.card img {
+	 max-width: 300px;
+}
+ div.card .card__image-holder {
+	 background: rgba(0,0,0,0.1);
+	 height: 0;
+	 padding-bottom: 75%;
+}
+ div.card div.card-title {
+	 background: #ffffff;
+	 padding: 6px 15px 10px;
+	 position: relative;
+	 z-index: 0;
+}
+ div.card div.card-title a.toggle-info {
+	 border-radius: 32px;
+	 height: 32px;
+	 padding: 0;
+	 position: absolute;
+	 right: 15px;
+	 top: 10px;
+	 width: 32px;
+}
+ div.card div.card-title a.toggle-info span {
+	 background: #ffffff;
+	 display: block;
+	 height: 2px;
+	 position: absolute;
+	 top: 16px;
+	 transition: all 0.15s 0s ease-out;
+	 width: 12px;
+}
+ div.card div.card-title a.toggle-info span.left {
+	 right: 14px;
+	 transform: rotate(45deg);
+}
+ div.card div.card-title a.toggle-info span.right {
+	 left: 14px;
+	 transform: rotate(-45deg);
+}
+ div.card div.card-title h2 {
+	 font-size: 24px;
+	 font-weight: 700;
+	 letter-spacing: -0.05em;
+	 margin: 0;
+	 padding: 0;
+}
+ div.card div.card-title h2 small {
+	 display: block;
+	 font-size: 18px;
+	 font-weight: 600;
+	 letter-spacing: -0.025em;
+}
+ div.card div.card-description {
+	 padding: 0 15px 10px;
+	 position: relative;
+	 font-size: 14px;
+}
+ div.card div.card-actions {
+	 box-shadow: 0 2px 0px 0 rgba(0,0,0,0.075);
+	 padding: 10px 15px 20px;
+	 text-align: center;
+}
+ div.card div.card-flap {
+	 background: #d9d9d9;
+	 position: absolute;
+	 width: 100%;
+	 transform-origin: top;
+	 transform: rotateX(-90deg);
+}
+ div.card div.flap1 {
+	 transition: all 0.3s 0.3s ease-out;
+	 z-index: -1;
+}
+ div.card div.flap2 {
+	 transition: all 0.3s 0s ease-out;
+	 z-index: -2;
+}
+ div.cards.showing div.card {
+	 cursor: pointer;
+	 opacity: 0.6;
+	 transform: scale(0.88);
+}
+ .no-touch div.cards.showing div.card:hover {
+	 opacity: 0.94;
+	 transform: scale(0.92);
+}
+ div.card.show {
+	 opacity: 1 !important;
+	 transform: scale(1) !important;
+}
+ div.card.show div.card-title a.toggle-info {
+	 background: #ff6666 !important;
+}
+ div.card.show div.card-title a.toggle-info span {
+	 top: 15px;
+}
+ div.card.show div.card-title a.toggle-info span.left {
+	 right: 10px;
+}
+ div.card.show div.card-title a.toggle-info span.right {
+	 left: 10px;
+}
+ div.card.show div.card-flap {
+	 background: #ffffff;
+	 transform: rotateX(0deg);
+}
+ div.card.show div.flap1 {
+	 transition: all 0.3s 0s ease-out;
+}
+ div.card.show div.flap2 {
+	 transition: all 0.3s 0.2s ease-out;
+}
+         </style>
    </head>
    <body>
       <nav>
@@ -22,7 +203,7 @@
           <li><a class="active" href="/ranking">Ranking</a></li>
           <li><a href="/board">Community</a></li>
           <li><a href="/developer">Developer</a></li>
-          <li><a href="/others">Others</a></li>
+          <li><a href="/mypage">My Page</a></li>
         </ul>
       </nav>
   <div class="bottom">
@@ -32,21 +213,34 @@
             
             <h1 onclick="location.href='/ranking'"></h1>
 
-            <h1>Ranking</h1>
+            <h1 style="color:black; font-weight: bold;">Ranking</h1>
           </div>
         </header>
-        <div class="bottom">
-          <table>
-             <%
-             for (var i = 0; i < games.length; i++) {
-             %>
-             <tr>
-              <td><a href="/ranking/rankingPage/<%= games[i].gameId %>"><%= games[i].gameName %></a></td>
-             </tr>
-             <%}%>
-    
-          </table>
-    </div>
+        <div class="cards">
+
+            <%
+            for (var i = 0; i < games.length; i++) {
+            %>
+            <div class="card">
+              <div class="card__image-holder">
+                <img class="card__image" src="<%= games[i].image %>" alt="game image" onclick="javascript:document.selectGame<%= games[i].gameId %>.submit();">
+              </div>
+              <div class="card-title">
+                  <span class="left"></span>
+                  <span class="right"></span>
+                </a>
+                <h2>
+                    <form name="selectGame<%= games[i].gameId %>" action="/games" method="POST" enctype="application/json">
+                        <input type="hidden" name="gameId" value="<%= games[i].gameId %>" />
+                     </form>
+                     <a href="/ranking/rankingPage/<%= games[i].gameId %>"><%= games[i].gameName %></a>
+                </h2>
+              </div>
+              
+            </div>
+            <%}%>
+          
+          </div>
   </div>
    </body>
 </html>

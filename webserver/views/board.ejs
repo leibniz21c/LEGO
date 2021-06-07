@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/communityPage.css">
+    <link rel="stylesheet" href="/css/communutyPage.css">
     <title>LEGO</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+        
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  
 } 
 nav{
   display: flex;
@@ -107,6 +110,183 @@ input[type="checkbox"]{
     color: cyan;
   }
 }
+
+/* table */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+}
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding: 30px 0;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: black;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+/* a tag */
+/* a {
+	 display: inline-block;
+	 position: relative;
+	 overflow: hidden;
+	 background: #3f3030;
+	 color: #3f3030;
+	 font-family: 'Montserrat', sans-serif;
+	 font-size: 3rem;
+	 font-weight: 700;
+	 text-transform: uppercase;
+	 text-decoration: none;
+	 padding: 1.8rem 2.4rem;
+	 cursor: pointer;
+}
+ a:before {
+	 position: absolute;
+	 top: 0;
+	 bottom: 0;
+	 left: 0;
+	 right: 0;
+	 background: #fff;
+	 content: '';
+	 transform: rotate(-90deg) translate(-50%, -100%);
+	 transform-origin: top left;
+	 transition: transform 0.3s;
+}
+ a:hover:before {
+	 transform: rotate(0) translate(0);
+}
+ a:after {
+	 position: absolute;
+	 top: 0.2px;
+	 bottom: 0.px;
+	 left: 0.2px;
+	 right: 0.2px;
+	 background: #fff;
+	 border: black solid 4px;
+	 color: black;
+	 content: '글쓰기';
+	 font-family: 'Montserrat', sans-serif;
+	 font-size: 3rem;
+	 font-weight: 700;
+	 text-transform: uppercase;
+	 padding: 1.4rem 1.8rem;
+} */
+ 
+
 </style>
 </head>
 <body>
@@ -122,31 +302,41 @@ input[type="checkbox"]{
           <li><a href="/ranking">Ranking</a></li>
           <li><a class="active" href="/board">Community</a></li>
           <li><a href="/developer">Developer</a></li>
-          <li><a href="/mypage">Others</a></li>
+          <li><a href="/mypage">My Page</a></li>
       </ul>
   </nav>
 
- <h1>Community</h1>
- <a href="/board/write">글쓰기</a>
- <table border="1">
+  <br>
+ <h1 style = "text-align: center; font-size:3em;">Community</h1>
+
+ <center>
+  <input type="button" onclick="location.href='/board/write'" value="글쓰기"></input>
+ </center>
+ <br>
+ 
+ <table class = "fl-table" border="1">
+    <thead>
      <tr>
-         <td>번호</td>
-         <td>작성자</td>
-         <td>제목</td>
-         <td>조회수</td>
-         <td>수정일</td>
-         <td>등록일</td>
+         <th>번호</th>
+         <th>작성자</th>
+         <th>제목</th>
+         <th>조회수</th>
+         <th>수정일</th>
+         <th>등록일</th>
      </tr>
+     </thead>
      <%
      for (var i = 0; i < boards.length; i++) {
      %>
      <tr>
+       <thread>
          <td><%= boards[i].boardId %></td>
          <td><%= boards[i].userId %></td>
          <td><a href="/board/read/<%= boards[i].boardId %>"><%= boards[i].title %></a></td>
          <td><%= boards[i].viewCount %></td>
          <td><%= boards[i].modidate %></td>
          <td><%= boards[i].regdate %></td>
+       </thread>
      </tr>
      <%}%>
  </table>

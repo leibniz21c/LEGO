@@ -4,7 +4,7 @@
     <title>LEGO</title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+      @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -104,6 +104,191 @@ input[type="checkbox"]{
     color: cyan;
   }
 }
+
+/* table */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+}
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding: 30px 0;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+
+/*댓글*/
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+}
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: black;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+}
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, rgb(49,49,49), black);
+    border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: black;
+    font-weight: 700;
+}
+/* reset input */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
 </style>
 </head>
 <body>
@@ -119,65 +304,68 @@ input[type="checkbox"]{
          <li><a href="/ranking">Ranking</a></li>
          <li><a class="active" href="/board">Community</a></li>
          <li><a href="/developer">Developer</a></li>
-         <li><a href="/others">Others</a></li>
+         <li><a href="/mypage">My Page</a></li>
       </ul>
   </nav>
 
-  <table border="1">
+  <table class = "fl-table" border="1">
+    <thead>
       <tr>
-          <td>작성자</td>
-          <td><%= board.userId %></td>
+          <th>작성자</th>
+          <td colspan = 5><%= board.userId %></td>
       </tr>
       <tr>
-          <td>제목</td>
-          <td><%= board.title %></td>
+          <th>제목</th>
+          <td colspan = 5><%= board.title %></td>
       </tr>
       <tr>
-          <td>내용</td>
-          <td><%= board.body %></td>
-      </tr>
+          <th>내용</th>
+          <td colspan = 5 style="word-break: break-all;"><%= board.body %></td>
+      </tr>   
       <tr>
-          <td>변경일</td>
+          <th>변경일</th>
           <td><%= board.modidate %></td>
-      </tr>
-      <tr>
-          <td>등록일</td>
+     
+          <th>등록일</th>
           <td><%= board.regdate %></td>
-      </tr>
-      <tr>
-          <td>조회수</td>
+    
+          <th>조회수</th>
           <td><%= board.viewCount %></td>
       </tr>
+    </thead>
   </table>  
   
+  <br>
+  <center>
   <form action="/board/update" method="POST" enctype="application/json">
-    <button type="submit" name="boardId" value="<%= board.boardId %>">글 수정</button>
+    <button type="submit" name="boardId" value="<%= board.boardId %>">수정</button>
   </form>
 
-  <a href="/board">목록</a>
+</center>
 
 
   <!-- Block -->
 
   <!-- 댓글 -->
+<form method="POST" action="/board/comment" enctype="application/json">
+  <center>
+  <div class="form__group field">
+    <input type="hidden" name="boardId" value="<%= board.boardId %>">
+    <input type="text" class="form__field" placeholder="Name" name="body">
+    <label for="name" class="form__label">댓글</label>
+  </div>
+  </center>
+</form>
   <br>
-
-  <form method="POST" action="/board/comment" enctype="application/json">
-      <label>댓글</label> 
-      <br>
-      <input type="hidden" name="boardId" value="<%= board.boardId %>">
-      <input type="text" name="body">
-      <input type="submit" value="작성">
-  </form>
  
 <br><br> 
 
 <form method="POST" action="/board/comment/delete" enctype="application/json">
   <input type="hidden" name="boardId" value="<%= board.boardId %>">
-  <table border="1">
+  <table class = "fl-table" border="1">
     <% for (var i = 0; i < comments.length; i++) { %>
     <tr>
-        <td><%= comments[i].userId %></td>
+        <th><%= comments[i].userId %></th>
         <td><%= comments[i].body %></td>
         <td><%= comments[i].regdate %></td>
         <% if (nowUserId === comments[i].userId) { %>

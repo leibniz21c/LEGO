@@ -7,6 +7,9 @@
       <link rel="stylesheet" href="/css/rankingPage.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        </style>
    </head>
    <body>
       <nav>
@@ -22,7 +25,7 @@
           <li><a class="active" href="/ranking">Ranking</a></li>
           <li><a href="/board">Community</a></li>
           <li><a href="/developer">Developer</a></li>
-          <li><a href="/others">Others</a></li>
+          <li><a href="/mypage">My Page</a></li>
         </ul>
       </nav>
   <div class="bottom">
@@ -32,16 +35,15 @@
             
             <h1 onclick="location.href='/ranking'"></h1>
 
-            <h1>RankingPage</h1>
+            <h1 style="color:black; font-weight: bold;">여기에 게임 제목 띄우자</h1>
           </div>
         </header>
         <div class="wrapper">
             <table>
                 <thead>
                     <tr>
-                        <th>ranking</th>
-                        <th>gameName</th>
-                        <th>userId</th>
+                        <th>순위</th>
+                        <th>아이디</th>
                         <th>Score</th>
                     </tr>
                 </thead>
@@ -49,7 +51,6 @@
                   <% for (var i = 0; i < gamelogs.length; i++) { %>
                     <tr>
                       <td><%= i+1 %></td>    
-                      <td><%= gamelogs[i].gameId %></td>
                       <td><%= gamelogs[i].userId %></td>
                       <td><%= gamelogs[i].score %></td>
                     </tr>

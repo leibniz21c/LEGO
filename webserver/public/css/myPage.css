@@ -1,0 +1,5 @@
+div .confirm { width:330px; margin: 50px auto;}
+div .confirm .info { margin:50px 0; line-height:150%; color:#757575;}
+div .confirm .info strong { color:#008bcc; }
+div .confirm .password label { display:inline-block; margin:0 0 5px; padding:0 0 0 10px; width:80px; font-weight:normal;}
+div .confirm .button { margin:40px 0 10px; }

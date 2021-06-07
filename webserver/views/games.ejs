@@ -5,6 +5,297 @@
       <title>LEGO</title>
       <link rel="stylesheet" href="/css/gamePage.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <style>
+        
+         /* table */
+/* *{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+}
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding: 30px 0;
+} */
+
+/* Table Styles */
+
+/* .table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+} */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+ body {
+	 background: #dce1df;
+	 color: #4f585e;
+	 font-family: 'Source Sans Pro', sans-serif;
+	 text-rendering: optimizeLegibility;
+}
+ a.btn {
+	 background: #0096a0;
+	 border-radius: 4px;
+	 box-shadow: 0 2px 0px 0 rgba(0,0,0,0.25);
+	 color: #ffffff;
+	 display: inline-block;
+	 padding: 6px 30px 8px;
+	 position: relative;
+	 text-decoration: none;
+	 transition: all 0.1s 0s ease-out;
+}
+ .no-touch a.btn:hover {
+	 background: #00a2ad;
+	 box-shadow: 0px 8px 2px 0 rgba(0,0,0,0.075);
+	 transform: translateY(-2px);
+	 transition: all 0.25s 0s ease-out;
+}
+ .no-touch a.btn:active, a.btn:active {
+	 background: #008a93;
+	 box-shadow: 0 1px 0px 0 rgba(255,255,255,0.25);
+	 transform: translate3d(0,1px,0);
+	 transition: all 0.025s 0s ease-out;
+}
+ div.cards {
+	 margin: 80px auto;
+	 max-width: 960px;
+	 text-align: center;
+}
+ div.card {
+	 background: rgb(49,49,49);
+	 display: inline-block;
+	 margin: 8px;
+	 max-width: 300px;
+	 perspective: 1000;
+	 position: relative;
+	 text-align: left;
+	 transition: all 0.3s 0s ease-in;
+	 width: 300px;
+	 z-index: 1;
+}
+ div.card img {
+	 max-width: 300px;
+}
+ div.card .card__image-holder {
+	 background: rgba(0,0,0,0.1);
+	 height: 0;
+	 padding-bottom: 75%;
+}
+ div.card div.card-title {
+	 background: #ffffff;
+	 padding: 6px 15px 10px;
+	 position: relative;
+	 z-index: 0;
+}
+ div.card div.card-title a.toggle-info {
+	 border-radius: 32px;
+	 height: 32px;
+	 padding: 0;
+	 position: absolute;
+	 right: 15px;
+	 top: 10px;
+	 width: 32px;
+}
+ div.card div.card-title a.toggle-info span {
+	 background: #ffffff;
+	 display: block;
+	 height: 2px;
+	 position: absolute;
+	 top: 16px;
+	 transition: all 0.15s 0s ease-out;
+	 width: 12px;
+}
+ div.card div.card-title a.toggle-info span.left {
+	 right: 14px;
+	 transform: rotate(45deg);
+}
+ div.card div.card-title a.toggle-info span.right {
+	 left: 14px;
+	 transform: rotate(-45deg);
+}
+ div.card div.card-title h2 {
+	 font-size: 24px;
+	 font-weight: 700;
+	 letter-spacing: -0.05em;
+	 margin: 0;
+	 padding: 0;
+}
+ div.card div.card-title h2 small {
+	 display: block;
+	 font-size: 18px;
+	 font-weight: 600;
+	 letter-spacing: -0.025em;
+}
+ div.card div.card-description {
+	 padding: 0 15px 10px;
+	 position: relative;
+	 font-size: 14px;
+}
+ div.card div.card-actions {
+	 box-shadow: 0 2px 0px 0 rgba(0,0,0,0.075);
+	 padding: 10px 15px 20px;
+	 text-align: center;
+}
+ div.card div.card-flap {
+	 background: #d9d9d9;
+	 position: absolute;
+	 width: 100%;
+	 transform-origin: top;
+	 transform: rotateX(-90deg);
+}
+ div.card div.flap1 {
+	 transition: all 0.3s 0.3s ease-out;
+	 z-index: -1;
+}
+ div.card div.flap2 {
+	 transition: all 0.3s 0s ease-out;
+	 z-index: -2;
+}
+ div.cards.showing div.card {
+	 cursor: pointer;
+	 opacity: 0.6;
+	 transform: scale(0.88);
+}
+ .no-touch div.cards.showing div.card:hover {
+	 opacity: 0.94;
+	 transform: scale(0.92);
+}
+ div.card.show {
+	 opacity: 1 !important;
+	 transform: scale(1) !important;
+}
+ div.card.show div.card-title a.toggle-info {
+	 background: #ff6666 !important;
+}
+ div.card.show div.card-title a.toggle-info span {
+	 top: 15px;
+}
+ div.card.show div.card-title a.toggle-info span.left {
+	 right: 10px;
+}
+ div.card.show div.card-title a.toggle-info span.right {
+	 left: 10px;
+}
+ div.card.show div.card-flap {
+	 background: #ffffff;
+	 transform: rotateX(0deg);
+}
+ div.card.show div.flap1 {
+	 transition: all 0.3s 0s ease-out;
+}
+ div.card.show div.flap2 {
+	 transition: all 0.3s 0.2s ease-out;
+}
+ 
+      </style>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
@@ -24,8 +315,39 @@
             <li><a href="/mypage">My Page</a></li>
          </ul>
       </nav>
-  <div class="bottom">
-      <table>
+      
+      <br>
+      <center>
+        <h1 style="color:black; font-weight: bold; font-size:3em;">IT'S TIME TO ENJOY !</h1>
+     </center>
+      <div class="cards">
+
+        
+
+        <%
+        for (var i = 0; i < games.length; i++) {
+        %>
+        <div class="card">
+          <div class="card__image-holder">
+            <img class="card__image" src="<%= games[i].image %>" alt="game image" onclick="javascript:document.selectGame<%= games[i].gameId %>.submit();">
+          </div>
+          <div class="card-title">
+            <h2>
+                <%= games[i].gameName %>
+                <form name="selectGame<%= games[i].gameId %>" action="/games" method="POST" enctype="application/json">
+                    <input type="hidden" name="gameId" value="<%= games[i].gameId %>" />
+                 </form>
+                <small>MADE BY : LEGO GAMES</small>
+            </h2>
+          </div>
+          
+        </div>
+        <%}%>
+      
+      </div>
+<!-- 
+    <div class="bottom">
+      <table class = "fl-table">
          <%
          for (var i = 0; i < games.length; i++) {
          %>
@@ -41,6 +363,52 @@
          <%}%>
 
       </table>
-  </div>
+  </div> -->
    </body>
+   <script>
+//        $(document).ready(function(){
+//     var zindex = 10;
+    
+//     $("div.card").click(function(e){
+//       e.preventDefault();
+  
+//       var isShowing = false;
+  
+//       if ($(this).hasClass("show")) {
+//         isShowing = true
+//       }
+  
+//       if ($("div.cards").hasClass("showing")) {
+//         // a card is already in view
+//         $("div.card.show")
+//           .removeClass("show");
+  
+//         if (isShowing) {
+//           // this card was showing - reset the grid
+//           $("div.cards")
+//             .removeClass("showing");
+//         } else {
+//           // this card isn't showing - get in with it
+//           $(this)
+//             .css({zIndex: zindex})
+//             .addClass("show");
+  
+//         }
+  
+//         zindex++;
+  
+//       } else {
+//         // no cards in view
+//         $("div.cards")
+//           .addClass("showing");
+//         $(this)
+//           .css({zIndex:zindex})
+//           .addClass("show");
+  
+//         zindex++;
+//       }
+      
+//     });
+//   });
+   </script>
 </html>

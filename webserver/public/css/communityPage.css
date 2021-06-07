@@ -1,241 +1,128 @@
-html {
-	font-family: "Noto Sans KR", sans-serif;
+/* table */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+}
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding: 30px 0;
 }
 
-/* 노말라이즈 */
-body, ul, li, h1, h2, h3, h4, h5, h6 {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-/* 
-a:link {
-	color: lightblue;
-} */
+/* Table Styles */
 
-/* 라이브러리 */
-.con {
-	margin: 0 auto;
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 }
 
-.img-box>img {
-	width: 100%;
-	display: block;
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
 }
 
-.row::after {
-	content: "";
-	display: block;
-	clear: both;
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
 }
 
-.cell {
-	float: left;
-	box-sizing: border-box;
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
 }
 
-.cell-right {
-	float: right;
-	box-sizing: border-box;
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
 }
 
-.margin-0-auto {
-	margin: 0 auto;
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
 }
 
-.block {
-	display: block;
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
 }
 
-.inline-block {
-	display: inline-block;
-}
+/* Responsive */
 
-.text-align-center {
-	text-align: center;
-}
-
-.line-height-0-ch-only {
-	line-height: 0;
-}
-
-.line-height-0-ch-only>* {
-	line-height: normal;
-}
-
-.relative {
-	position: relative;
-}
-
-.absolute-left {
-	position: absolute;
-	left: 0;
-}
-
-.absolute-right {
-	position: absolute;
-	right: 0;
-}
-
-.absolute-middle {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-/* 커스텀 */
-/* 반응형 레이아웃 */
-.con {
-	max-width: 950px;
-}
-
-.con-min-width {
-	min-width: 320px;
-}
-
-.top-menu a {
-	text-decoration: none;
-	color: gray;
-	font-weight: bold;
-	font-size: 1.2rem;
-}
-
-html, body { 
-	overflow-x: hidden;
-}
-
-.table-common>table {
-	width: 100%;
-	border-collapse: collapse;
-}
-
-.table-common .btn-box {
-	text-align:center;
-}
-
-.table-common>table th, .table-common>table td {
-	border: 1px solid black;
-	padding: 10px;
-}
-
-.article-list table {
-    border:none;   
-    border-top:2px solid lightgray;
-    border-bottom:2px solid lightgray;
-}
-
-.article-list > table th, .article-list > table td {
-    border:none;
-}
-
-.article-list > table td {
-    border-bottom:1px solid lightgray;
-}
-
-.article-list > table thead {
-    border-bottom:2px solid lightgray;
-    background-color:#F5F5F5;
-}
-
-.article-detail {
-    border:2px solid lightgray;
-}
-
-.article-detail > table {
-    border:none;
-    width:calc(100% - 100px);
-}
-
-.article-detail > table th, .article-detail > table td {
-    border:none;
-}
-
-.article-detail > table tr:not(:last-child) {
-    border-bottom:1px solid lightgray;
-}
-
-.article-detail > table tr:not(.article-body), .article-detail > table tr:not(.article-body) > td{
-    height:20px;
-    font-size:0.8rem;
-}
-
-.article-detail > table tr.article-title > td {
-    height:40px;
-    font-weight:bold;
-    font-size:1.2rem;
-}
-
-.article-detail > table td:last-child {
-    padding-right:100px;
-}
-
-.article-detail > .article-writer {
-    width:100px;
-    height:102px;
-    background-color:lightgray;
-    border-bottom:1px solid lightgray;
-    text-align:center;
-}
-
-.article-detail > .article-writer .writer-icon img{
-    margin:0 auto;
-    background-color:white;
-    width:80px;
-    height:80px;
-    border-radius:50%;
-}
-
-.reply {
-    margin-top:20px;
-    border:2px solid lightgray;
-    padding:15px;
-    box-sizing:border-box;
-}
-
-.reply-form {
-    padding:10px;
-}
-
-.reply-form > form input[type="text"] {
-    width:200px;
-}
-
-.reply-form > form textarea {
-    width:calc(100% - 100px);
-    min-height:40px;
-}
-
-.reply-form > form input[type="submit"] {
-    width:80px;
-    height:40px;
-    transform:translatey(-40%);
-}
-
-.reply-form > form > div:not(:last-child) {
-    margin-bottom:5px;
-}
-
-.reply-list > table {
-    border:none;
-}
-
-.reply-list > table th {
-    display:none;
-}
-
-.reply-list > table td {
-    border:none;
-}
-
-.reply-list > table tr:nth-child(2n+1) {
-    background-color:rgba(0,0,0,0.06);
-}
-
-.reply-list > table td:first-child {
-    font-weight:bold;
-}
-
-.reply-list > table td:first-child::after {
-    content:" : ";
-    font-weight:bold;
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
 }
