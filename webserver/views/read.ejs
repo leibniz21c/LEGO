@@ -3,6 +3,7 @@
 <head>
     <title>LEGO</title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <style>
       @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
@@ -314,47 +315,52 @@ h2{
           <th>작성자</th>
           <td colspan = 5><%= board.userId %></td>
       </tr>
+
       <tr>
           <th>제목</th>
           <td colspan = 5><%= board.title %></td>
       </tr>
-      <tr>
-          <th>내용</th>
-          <td colspan = 5 style="word-break: break-all;"><%= board.body %></td>
+
+      <tr height = 200>
+          <th >내용</th>
+          <td colspan = "5" style="word-break: break-all;"><%= board.body %></td>
       </tr>   
+      
       <tr>
           <th>변경일</th>
-          <td><%= board.modidate %></td>
+          <td><%= board.modidate.toLocaleDateString() + " " + board.modidate.toLocaleTimeString() %></td>
      
           <th>등록일</th>
-          <td><%= board.regdate %></td>
+          <td><%= board.regdate.toLocaleDateString() + " " +  board.regdate.toLocaleTimeString()%></td>
     
           <th>조회수</th>
           <td><%= board.viewCount %></td>
       </tr>
+      
     </thead>
   </table>  
   
   <br>
+  <% if (nowUserId == board.userId) { %>
   <center>
-  <form action="/board/update" method="POST" enctype="application/json">
-    <button type="submit" name="boardId" value="<%= board.boardId %>">수정</button>
-  </form>
-
-</center>
+    <form action="/board/update" method="POST" enctype="application/json">
+      <button type="submit" class="btn btn-primary" name="boardId" value="<%= board.boardId %>">수정</button>
+    </form>
+  </center>
+  <% } %>
 
 
   <!-- Block -->
 
   <!-- 댓글 -->
 <form method="POST" action="/board/comment" enctype="application/json">
-  <center>
+  <right>
   <div class="form__group field">
     <input type="hidden" name="boardId" value="<%= board.boardId %>">
     <input type="text" class="form__field" placeholder="Name" name="body">
     <label for="name" class="form__label">댓글</label>
   </div>
-  </center>
+  </right>
 </form>
   <br>
  
@@ -367,10 +373,10 @@ h2{
     <tr>
         <th><%= comments[i].userId %></th>
         <td><%= comments[i].body %></td>
-        <td><%= comments[i].regdate %></td>
+        <td><%= comments[i].regdate.toLocaleDateString() + " " +  comments[i].regdate.toLocaleTimeString()%></td>
         <% if (nowUserId === comments[i].userId) { %>
           <td>
-            <button type="submit" name="commentId" value="<%= comments[i].commentId %>">댓글 삭제</button>  
+            <button type="submit" class="btn btn-secondary" name="commentId" value="<%= comments[i].commentId %>">댓글 삭제</button>  
           </td>
         <% } else { %>
           <td></td>

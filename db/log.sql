@@ -5,8 +5,7 @@ show databases ;
 create table Users(
     userId varchar(255) primary key,
     password varchar(255),
-    age int,
-    sex char
+    age int
 );
 create table Games(
     gameId int NOT NULL AUTO_INCREMENT primary key,
@@ -42,25 +41,25 @@ create table Comments(
 
 show tables;
 
--- # GameLogs fk 설정
--- alter table GameLogs
--- add constraint fk_GameLogs_gameId foreign key (gameId)
--- references Games(gameId);
+# GameLogs fk 설정
+alter table GameLogs
+add constraint fk_GameLogs_gameId foreign key (gameId)
+references Games(gameId);
 
--- alter table GameLogs
--- add constraint fk_GameLogs_userId foreign key (userId)
--- references Users(userId);
+alter table GameLogs
+add constraint fk_GameLogs_userId foreign key (userId)
+references Users(userId);
 
--- # Comment fk 설정
--- alter table Comments
--- add constraint fk_Comment_userId foreign key (userId)
--- references Users(userId);
+# Comment fk 설정
+alter table Comments
+add constraint fk_Comment_userId foreign key (userId)
+references Users(userId);
 
--- alter table Comments
--- add constraint fk_Comment_boardId foreign key (boardId)
--- references Boards(boardId);
+alter table Comments
+add constraint fk_Comment_boardId foreign key (boardId)
+references Boards(boardId);
 
--- # Board fk 설정
--- alter table Boards
--- add constraint fk_Board_userId foreign key (userId)
--- references Users(userId);`
+# Board fk 설정
+alter table Boards
+add constraint fk_Board_userId foreign key (userId)
+references Users(userId);

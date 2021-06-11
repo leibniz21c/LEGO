@@ -139,8 +139,18 @@ h2{
 }
 
 	</style>
+
 </head>
 <body>
+	<!-- Unconfirmed Password -->
+	<%
+	if (unconfirmed) { 
+	%>
+	<script type="text/javascript"> alert("비밀번호가 틀렸습니다."); </script>
+	<%
+	}
+	%>
+
     <nav>
     <div class="logo">
        LEGO
@@ -238,8 +248,8 @@ h2{
 								<!-- <td><%= boards[i].boardId %></td> -->
 								<td><a href="/board/read/<%= boards[i].boardId %>"><%= boards[i].title %></a></td>
 								<td><%= boards[i].viewCount %></td>
-								<td><%= boards[i].modidate %></td>
-								<td><%= boards[i].regdate %></td>
+								<td><%= boards[i].modidate.toLocaleDateString() + " " + boards[i].modidate.toLocaleTimeString()%></td>
+								<td><%= boards[i].regdate.toLocaleDateString() + " " +  boards[i].regdate.toLocaleTimeString() %></td>
 							</tr>
 							</tbody>
 							<%}%>
@@ -247,13 +257,15 @@ h2{
 					</div>
 
 					<!-- boards field -->
-					<div class="tab-pane fade" id="logout" role="tabpanel" aria-labelledby="logout-tab">
-						<h3 class="mb-4">Log-out</h3>
-						<center>
-						<p>히잉 한 판만 더 하고 가요</p>
-						<button class="btn btn-primary" type="submit" onclick="location.href='https://github.com/ndo04343/LEGO'">싫어 엄마가 그만하래</button>
-					</center>
-					</div>
+					<form action="/logout" method="POST">
+						<div class="tab-pane fade" id="logout" role="tabpanel" aria-labelledby="logout-tab">
+							<h3 class="mb-4">Logout</h3>
+							<center>
+							<p>한 판만 더 하고 가요</p>
+							<button class="btn btn-primary" type="submit">Logout</button>
+						</center>
+						</div>
+					</form>
 
 					<!-- End of fields -->
 

@@ -223,7 +223,7 @@ h2{
             %>
             <div class="card">
               <div class="card__image-holder">
-                <img class="card__image" src="<%= games[i].image %>" alt="game image" onclick="javascript:document.selectGame<%= games[i].gameId %>.submit();">
+                <img class="card__image" src="<%= games[i].image %>" alt="game image" onclick="location.href='/ranking/rankingPage/<%= games[i].gameId %>'">
               </div>
               <div class="card-title">
                   <span class="left"></span>

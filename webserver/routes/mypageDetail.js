@@ -15,7 +15,8 @@ module.exports = async (req, res) => {
         })
         res.render('mypage_detail', {
             user,
-            boards
+            boards,
+            unconfirmed: false,
         });
     } else {
         res.redirect('/')

@@ -6,7 +6,6 @@ module.exports = (req, res) => {
         Users.create({
             userId: req.body.userId,
             age: req.body.age,
-            sex: req.body.sex,
             password: hash,
         }, (error) => {
             if (error) {

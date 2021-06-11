@@ -12,10 +12,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      sex: {
-        type: DataTypes.CHAR,
-        allowNull: false,
-      },
       password: {
         type: DataTypes.STRING,
         allowNull: false,

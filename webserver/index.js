@@ -48,6 +48,7 @@ const mypageCheckController = require('./controllers/mypageCheckController')
 const passwordModifyController = require('./controllers/passwordModifyController')
 const setGameLogController = require('./controllers/setGameLogController')
 const gamePageController = require('./controllers/gamePageController')
+const logoutController = require('./controllers/logoutController')
 
 // Middlewares
 const authMiddleware = require('./middlewares/authMiddleware')
@@ -67,8 +68,6 @@ app.get('/board/read/:boardId', getBoardRouter)
 app.get('/mypage', mypageRouter)
 app.get('/mypage/detail', mypageDetailRouter)
 
-
-
 app.post('/games', gamePageRouter)
 
 
@@ -84,7 +83,7 @@ app.post('/board/comment', commentController)
 app.post('/board/comment/delete', commentDeleteController)
 app.post('/mypage/detail', mypageCheckController)
 app.post('/mypage/detail/modify_password', passwordModifyController)
-
+app.post('/logout', logoutController)
 
 // Game commnuication
 app.post('/logging', setGameLogController)
@@ -92,4 +91,4 @@ app.post('/logging', setGameLogController)
 // Listening
 app.listen(3000, () => {
     console.log('App listening on http://127.0.0.1:3000/')
-})
+}) 

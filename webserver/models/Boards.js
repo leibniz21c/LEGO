@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       regdate: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATE(6),
         defaultValue: Sequelize.NOW,
         allowNull: false,
       },

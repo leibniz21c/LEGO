@@ -1,7 +1,7 @@
 const Games = require('./models').Games
 
 Games.create({
-    gameName: "푸드파이터",
-    userId: "곽승규",
-    image: "/gameImage/foodfighter.png"
+    gameName: "Hit the knife!",
+    userId: "admin",
+    image: "/gameImage/3.png"
 })

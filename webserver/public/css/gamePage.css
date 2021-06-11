@@ -2,35 +2,25 @@ html, head, body {
     width: 100%;
     height: 100%;
 }
+body {
+  position: relative;
+}
 
-  div.left {
-    width: 50%;
-    height: 100%;
-    float: left;
-    border: 1px solid ;
-  }
+div.left {
+  width: 50%;
+  height: 100%;
+  float: left;
+  border: 1px solid ;
+}
 
-  div.right {
-    width: 50%;
-    height: 100%;
-    float: right;
-    border: 1px solid;
-  }
+div.right {
+  width: 50%;
+  height: 100%;
+  float: right;
+  border: 1px solid;
+}
 
-  div.canvas {
-    width: 100%;
-    height: 80%;
-    z-index: 1;
-  }
-
-  #canvasArea2 {
-    width: 100%;
-    height: 80%;
-    margin-bottom: 15%;
-  }
-
-
-  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -163,4 +153,23 @@ table{
 td{
   border: 2px solid black;
 }
-  
+
+.container {
+  display: table;
+  width: 100%;
+  height: 90%;
+  z-index: -1;
+}
+
+.container_inner {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#canvasArea2 {
+  display: inline-block;
+  height: 80%;
+  width: 100%;
+  z-index: 0;
+}

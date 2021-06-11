@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
         const game = await Games.findOne({
             where :{
                 gameId: req.params.gameId
-            }        
+            }
         })
 
         const gamelogs = await GameLogs.findAll({

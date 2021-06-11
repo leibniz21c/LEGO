@@ -239,6 +239,15 @@ h2{
         text-align: center;
     }
 }
+
+.reading:hover {
+  color:red;
+}
+.reading {
+  color:black;
+  text-decoration: none;
+  font-weight: bold;
+}
 /* a tag */
 /* a {
 	 display: inline-block;
@@ -326,16 +335,17 @@ h2{
      </tr>
      </thead>
      <%
+     boards.reverse()
      for (var i = 0; i < boards.length; i++) {
      %>
      <tr>
        <thread>
          <td><%= boards[i].boardId %></td>
          <td><%= boards[i].userId %></td>
-         <td><a href="/board/read/<%= boards[i].boardId %>"><%= boards[i].title %></a></td>
+         <td><a class="reading" href="/board/read/<%= boards[i].boardId %>"><%= boards[i].title %></a></td>
          <td><%= boards[i].viewCount %></td>
-         <td><%= boards[i].modidate %></td>
-         <td><%= boards[i].regdate %></td>
+         <td><%= boards[i].modidate.toLocaleDateString() + " " + boards[i].modidate.toLocaleTimeString() %></td>
+         <td><%= boards[i].regdate.toLocaleDateString() + " " +  boards[i].regdate.toLocaleTimeString() %></td>
        </thread>
      </tr>
      <%}%>
