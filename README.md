@@ -2,6 +2,9 @@
 Welcome to __LEGO__  git repository!<br>
 Here are some useful information about LEGO service.
 
+### 0. Enjoy!
+Link : [http://legogames.iptime.org/](http://legogames.iptime.org/)
+
 ### 1. What is LEGO?
 LEGO is open web game community that contains a lot of games. The games in LEGO are always updated and new games are always enjoyable! __Enjoy LEGO__ : )
 
