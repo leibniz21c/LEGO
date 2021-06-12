@@ -426,6 +426,7 @@ for(var i = 0, len = gdjs.New_32sceneCode.GDPinkObjects1.length ;i < len;++i) {
 }
 }{gdjs.evtTools.runtimeScene.pauseTimer(runtimeScene, "TrafficTimer");
 }{gdjs.evtTools.runtimeScene.pauseTimer(runtimeScene, "TreeTimer");
+}{gdjs.evtTools.network.sendAsyncRequest("http://legogames.iptime.org/logging", "{\"score\" : " + gdjs.evtTools.common.getVariableString(runtimeScene.getGame().getVariables().get("Score")) + "}", "POST", "application/json", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable);
 }}
 
 }

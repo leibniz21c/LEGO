@@ -99,6 +99,11 @@ gdjs.Level1Code.GDPigObjects4= [];
 gdjs.Level1Code.conditionTrue_0 = {val:false};
 gdjs.Level1Code.condition0IsTrue_0 = {val:false};
 gdjs.Level1Code.condition1IsTrue_0 = {val:false};
+gdjs.Level1Code.condition2IsTrue_0 = {val:false};
+gdjs.Level1Code.conditionTrue_1 = {val:false};
+gdjs.Level1Code.condition0IsTrue_1 = {val:false};
+gdjs.Level1Code.condition1IsTrue_1 = {val:false};
+gdjs.Level1Code.condition2IsTrue_1 = {val:false};
 
 
 gdjs.Level1Code.eventsList0 = function(runtimeScene) {
@@ -313,7 +318,6 @@ gdjs.Level1Code.condition0IsTrue_0.val = false;
 gdjs.Level1Code.condition0IsTrue_0.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
 }if (gdjs.Level1Code.condition0IsTrue_0.val) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Level1", false);
-}{gdjs.evtTools.network.sendAsyncRequest("http://legogames.iptime.org/logging", "{\"score\" : " + gdjs.evtTools.common.getVariableString(runtimeScene.getGame().getVariables().get("Score")) + "}", "POST", "application/json", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable);
 }}
 
 }
@@ -772,6 +776,7 @@ gdjs.copyArray(runtimeScene.getObjects("Life"), gdjs.Level1Code.GDLifeObjects1);
 gdjs.copyArray(runtimeScene.getObjects("Pig"), gdjs.Level1Code.GDPigObjects1);
 
 gdjs.Level1Code.condition0IsTrue_0.val = false;
+gdjs.Level1Code.condition1IsTrue_0.val = false;
 {
 for(var i = 0, k = 0, l = gdjs.Level1Code.GDPigObjects1.length;i<l;++i) {
     if ( gdjs.Level1Code.GDPigObjects1[i].getBehavior("Health").IsDead((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) ) {
@@ -780,7 +785,47 @@ for(var i = 0, k = 0, l = gdjs.Level1Code.GDPigObjects1.length;i<l;++i) {
         ++k;
     }
 }
-gdjs.Level1Code.GDPigObjects1.length = k;}if (gdjs.Level1Code.condition0IsTrue_0.val) {
+gdjs.Level1Code.GDPigObjects1.length = k;}if ( gdjs.Level1Code.condition0IsTrue_0.val ) {
+{
+{gdjs.Level1Code.conditionTrue_1 = gdjs.Level1Code.condition1IsTrue_0;
+gdjs.Level1Code.condition0IsTrue_1.val = false;
+{
+gdjs.Level1Code.condition0IsTrue_1.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().get("Check")) == 0;
+}gdjs.Level1Code.conditionTrue_1.val = true && gdjs.Level1Code.condition0IsTrue_1.val;
+}
+}}
+if (gdjs.Level1Code.condition1IsTrue_0.val) {
+{gdjs.evtTools.network.sendAsyncRequest("http://legogames.iptime.org/logging", "{\"score\" : " + gdjs.evtTools.common.getVariableString(runtimeScene.getGame().getVariables().get("Score")) + "}", "POST", "application/json", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable);
+}{runtimeScene.getGame().getVariables().get("Check").setNumber(1);
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Pig"), gdjs.Level1Code.GDPigObjects1);
+
+gdjs.Level1Code.condition0IsTrue_0.val = false;
+gdjs.Level1Code.condition1IsTrue_0.val = false;
+{
+for(var i = 0, k = 0, l = gdjs.Level1Code.GDPigObjects1.length;i<l;++i) {
+    if ( gdjs.Level1Code.GDPigObjects1[i].getBehavior("Health").IsDead((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) ) {
+        gdjs.Level1Code.condition0IsTrue_0.val = true;
+        gdjs.Level1Code.GDPigObjects1[k] = gdjs.Level1Code.GDPigObjects1[i];
+        ++k;
+    }
+}
+gdjs.Level1Code.GDPigObjects1.length = k;}if ( gdjs.Level1Code.condition0IsTrue_0.val ) {
+{
+{gdjs.Level1Code.conditionTrue_1 = gdjs.Level1Code.condition1IsTrue_0;
+gdjs.Level1Code.condition0IsTrue_1.val = false;
+{
+gdjs.Level1Code.condition0IsTrue_1.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().get("Check")) == 1;
+}gdjs.Level1Code.conditionTrue_1.val = true && gdjs.Level1Code.condition0IsTrue_1.val;
+}
+}}
+if (gdjs.Level1Code.condition1IsTrue_0.val) {
 gdjs.copyArray(runtimeScene.getObjects("ButtonMainMenu"), gdjs.Level1Code.GDButtonMainMenuObjects1);
 gdjs.copyArray(runtimeScene.getObjects("ButtonTryAgain"), gdjs.Level1Code.GDButtonTryAgainObjects1);
 gdjs.copyArray(runtimeScene.getObjects("Food1"), gdjs.Level1Code.GDFood1Objects1);
@@ -840,9 +885,14 @@ gdjs.Level1Code.eventsList5(runtimeScene);} //End of subevents
 
 
 gdjs.Level1Code.condition0IsTrue_0.val = false;
+gdjs.Level1Code.condition1IsTrue_0.val = false;
 {
 gdjs.Level1Code.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
-}if (gdjs.Level1Code.condition0IsTrue_0.val) {
+}if ( gdjs.Level1Code.condition0IsTrue_0.val ) {
+{
+gdjs.Level1Code.condition1IsTrue_0.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().get("Check")) == 0;
+}}
+if (gdjs.Level1Code.condition1IsTrue_0.val) {
 gdjs.copyArray(runtimeScene.getObjects("ButtonMainMenu"), gdjs.Level1Code.GDButtonMainMenuObjects1);
 gdjs.copyArray(runtimeScene.getObjects("ButtonTryAgain"), gdjs.Level1Code.GDButtonTryAgainObjects1);
 gdjs.copyArray(runtimeScene.getObjects("GameOver"), gdjs.Level1Code.GDGameOverObjects1);
@@ -855,6 +905,7 @@ gdjs.copyArray(runtimeScene.getObjects("GameOver"), gdjs.Level1Code.GDGameOverOb
 }{for(var i = 0, len = gdjs.Level1Code.GDButtonMainMenuObjects1.length ;i < len;++i) {
     gdjs.Level1Code.GDButtonMainMenuObjects1[i].hide();
 }
+}{runtimeScene.getGame().getVariables().get("Score").setNumber(0);
 }}
 
 }
