@@ -9,7 +9,7 @@ LEGO is open web game community that contains a lot of games. The games in LEGO 
 ![architecture](./pic/architecture.png)
 
 ### 3. DB Model
-![dbmodel](./pic/dbmodel.png)
+![dbmodel](./pic/models.png)
 
 ### 4. Dependency Tree
 ```
