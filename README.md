@@ -1,20 +1,22 @@
 ![logo](./pic/logo.png)<br>
 Welcome to __LEGO__  git repository!<br>
-Here are some useful information about LEGO service.
+Here are some useful information about LEGO service.<br>
+### 0. Docker image
+Link : [https://hub.docker.com/r/leibniz21c/legogames](https://hub.docker.com/r/leibniz21c/legogames)
 
-### 0. Enjoy!
+### 1. Enjoy!
 Link : [http://legogames.iptime.org/](http://legogames.iptime.org/)
 
-### 1. What is LEGO?
+### 2. What is LEGO?
 LEGO is open web game community that contains a lot of games. The games in LEGO are always updated and new games are always enjoyable! __Enjoy LEGO__ : )
 
-### 2. Architecture
+### 3. Architecture
 ![architecture](./pic/architecture.png)
 
-### 3. DB Model
+### 4. DB Model
 ![dbmodel](./pic/models.png)
 
-### 4. Dependency Tree
+### 5. Dependency Tree
 ```
 lego@1.0.0 /usr/src/app
 ├─┬ bcrypt@5.0.1
