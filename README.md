@@ -7,7 +7,7 @@ Here are some useful information about LEGO service.<br>
 Link : [https://hub.docker.com/r/leibniz21c/legogames](https://hub.docker.com/r/leibniz21c/legogames)
 
 ### 1. Enjoy!
-<img src="./pic/services.png" height="250">
+<img src="./pic/services.png" height="500">
 
 Link : [http://legogames.iptime.org/](http://legogames.iptime.org/)
 
@@ -15,11 +15,11 @@ Link : [http://legogames.iptime.org/](http://legogames.iptime.org/)
 LEGO is open web game community that contains a lot of games. The games in LEGO are always updated and new games are always enjoyable! __Enjoy LEGO__ : )
 
 ### 3. Architecture
-<img src="./pic/architecture.png" height="300">
+<img src="./pic/architecture.png" height="500">
 
 
 ### 4. DB Model
-<img src="./pic/models.png" height="300">
+<img src="./pic/models.png" height="500">
 
 
 ### 5. Dependency Tree
